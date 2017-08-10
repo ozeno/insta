@@ -5,7 +5,7 @@
       = pluralize(@pic.errors.count, 'error')
       prevented this Pic from saving
       %ul
-        -@pic.errors.full_message do |msg|
+        -@pic.errors.full_messages do |msg|
           %li= msg
 
   .form-group
