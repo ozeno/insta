@@ -2,12 +2,15 @@
   #pics.transitions-enabled
     - @pics.each do |pic|
       .box.panel.panel-default
-        = image_tag pic.image, class: 'img-responsive' # cok seksi
+        = link_to pic do
+          = image_tag pic.image, class: 'img-responsive' # cok seksi
         .padding
           %h3= link_to pic.title, pic
           %p= pic.description.slice 0..220
-          %p
-            %small Posted by
+          %small Posted by
+          - if current_user == pic.user
+            = 'you'
+          - else
             = pic.user.name || pic.user.email
           =# link_to 'Delete', pic, method: :delete,
           data: { confirm: 'Are you sure' }, class: 'btn btn-default btn-sm'

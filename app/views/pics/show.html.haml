@@ -1,6 +1,6 @@
 #pic_show.row
   .col-md-6.col-md-offset-3
-    .panel.panel-default
+    .box.panel.panel-default
       .panel.heading.pic_image
         = image_tag @pic.image, class: 'img-responsive'
       .panel-body
@@ -9,13 +9,15 @@
       .panel-footer
         .row
           .col-md-6
-            %p
             %small Posted by
-            = @pic.user.name || @pic.user.email
+            - if current_user == @pic.user
+              = 'you'
+            - else
+              = @pic.user.name || @pic.user.email
           .col-md-6
             .btn-group.pull-right
               - if user_signed_in? && @pic.user == current_user
-                = link_to 'Edit', edit_pic_path(@pic), class: 'btn btn-default'
-                = link_to 'Delete', pic_path(@pic), method: :delete,
+                = link_to ' Edit', edit_pic_path(@pic), class: 'btn btn-default fa fa-pencil'
+                = link_to ' Delete', pic_path(@pic), method: :delete,
                                   data: { confirm: 'Are you sure?' },
-                                  class: 'btn btn-danger'
+                                  class: 'btn btn-danger fa fa-trash-o'

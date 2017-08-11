@@ -1,3 +1,11 @@
+* {
+  color: #2F4F4F;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .btn {
   border-radius: 46px;
   border: solid #a393d7 1px;
@@ -5,7 +13,6 @@
 
 .navbar {
   border-radius: 0;
-  background-color: #272727;
 }
 
 .navbar-brand {
@@ -34,6 +41,11 @@
   background-color: #5dd7a3;
   justify-content: center;
   align-items: center;
+}
+
+.box {
+  border-radius: 15px;
+  box-shadow: 0px 7px 25px -10px rgba(67,70,71,1);
 }
 
 #edit_page {
