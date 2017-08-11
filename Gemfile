@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml', '~> 5.0'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'devise'
 
 group :development, :test do
 
