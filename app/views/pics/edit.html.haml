@@ -1,5 +1,8 @@
-%h1 Edit Post
-
-= render 'form'
-
-= link_to 'Back', @pic 
+#edit_page.col-md-8.col-md-offset-2
+  .row
+    .panel.panel.default
+      .panel-heading
+        %h1 Edit Post
+      .panel-body
+        = render 'form'
+        = link_to 'Back', @pic 
