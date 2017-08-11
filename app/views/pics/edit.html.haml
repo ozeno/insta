@@ -2,7 +2,8 @@
   .row
     .panel.panel.default
       .panel-heading
-        %h1 Edit Post
+        %h1 Edit Pic
       .panel-body
+        = image_tag @pic.image.url(:medium)
         = render 'form'
         = link_to 'Back', @pic 

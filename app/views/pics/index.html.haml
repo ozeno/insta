@@ -1,10 +1,12 @@
-.card-group
-  - @pics.each do |pic|
-    .card.card-outline-info
-      %h2= link_to pic.title, pic
-      %p= pic.description.slice 0..150
-      %p
-        %small Posted by
-        = pic.user.name
-      = link_to 'Delete', pic, method: :delete,
-      data: { confirm: 'Are you sure' }, class: 'btn btn-default btn-sm'
+- @pics.each do |pic|
+  .card.card-inverse
+    .card-img-top
+      = image_tag pic.image.url(:medium)
+    %h3= link_to pic.title, pic
+    %p= pic.description.slice 0..220
+    %p
+      %small Posted by
+      = pic.user.name
+    = link_to 'Delete', pic, method: :delete,
+    data: { confirm: 'Are you sure' }, class: 'btn btn-default btn-sm'
+  %br/

@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'devise'
+gem 'paperclip'
 
 group :development, :test do
 
