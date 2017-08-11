@@ -4,6 +4,7 @@
       .panel-heading
         %h1 Edit Pic
       .panel-body
-        = image_tag @pic.image.url(:medium)
+        = image_tag @pic.image, class: 'img-responsive'
         = render 'form'
-        = link_to 'Back', @pic 
+        %br/
+        = link_to 'Cancel', @pic, class: 'btn btn-danger'

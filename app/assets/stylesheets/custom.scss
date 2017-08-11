@@ -1,8 +1,41 @@
 .btn {
   border-radius: 46px;
-  border: solid #a393d7 2px;
+  border: solid #a393d7 1px;
 }
 
-#edit_page{
+.navbar {
+  border-radius: 0;
+  background-color: #272727;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  a {
+    text-decoration: none; 
+  }
+}
+
+.padding {
+  padding: 10px;
+}
+
+.allert-danger {
+  display: flex;
+  height: 30px;
+  background-color: #ff2841;
+  color: #fcf2ff;
+  justify-content: center;
+  align-items: center;
+}
+
+.allert {
+  display: flex;
+  height: 30px;
+  background-color: #5dd7a3;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit_page {
   
 }

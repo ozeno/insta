@@ -22,6 +22,8 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'devise'
 gem 'paperclip'
+gem 'masonry-rails'
+gem "font-awesome-rails"
 
 group :development, :test do
 
