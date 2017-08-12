@@ -8,7 +8,7 @@
         %p= @pic.description
       .panel-footer
         .row
-          .col-md-6
+          .col-md-12
             %small Posted by
             - if current_user == @pic.user
               = 'you'
@@ -21,7 +21,6 @@
                  method: :put, class: 'fa fa-thumbs-o-down'
                 = link_to " #{@pic.get_upvotes.size}", like_pic_path(@pic),
                  method: :put, class: 'fa fa-thumbs-o-up'
-          .col-md-6
             .btn-group.pull-right
               - if user_signed_in? && @pic.user == current_user
                 = link_to ' Edit', edit_pic_path(@pic), class: 'btn btn-default fa fa-pencil'
