@@ -3,7 +3,6 @@
   <head>
     <title>Insta</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,19 +11,19 @@
     <div class="nav navbar navbar-light">
       <div class="container">
         <div class="navbar-brand">
-          <%= link_to ' ', root_path, class: 'fa fa-camera-retro fa-1x'%> <!-- yey -->
+          <%= link_to '  ', root_path, class: 'fa fa-camera-retro fa-1x'%> <!-- yey -->
         </div>
         <div class="pull-right">
           <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-left nav-group">
-              <li><%= link_to ' Post Pic', new_pic_path, class: 'fa fa-plus-square' %></li>
-              <li><%= link_to 'Settings', edit_user_registration_path %></li>
-              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to ' ', new_pic_path, class: 'fa fa-plus-square fa-lg' %></li>
+              <li><%= link_to ' ', edit_user_registration_path, class: 'fa fa-user-o fa-lg'%></li>
+              <li><%= link_to ' ', destroy_user_session_path, method: :delete, class: 'fa fa-sign-out fa-lg' %></li>
             </ul>
           <% else %>
             <ul class="nav navbar-nav navbar-left">
-              <li><%= link_to 'Sign up', new_user_registration_path %></li>
-              <li><%= link_to 'Log in', new_user_session_path %></li>
+              <li><%= link_to ' ', new_user_registration_path, class: 'fa fa-user-plus fa-lg' %></li>
+              <li><%= link_to ' ', new_user_session_path, class: 'fa fa-sign-in fa-lg' %></li>
             </ul>
           <% end %>
         </div>

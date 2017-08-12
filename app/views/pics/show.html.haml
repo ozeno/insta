@@ -7,17 +7,20 @@
         %h1= @pic.title
         %p= @pic.description
       .panel-footer
-        .row
-          .col-md-6
-            %small Posted by
-            - if current_user == @pic.user
-              = 'you'
-            - else
-              = @pic.user.name || @pic.user.email
-          .col-md-6
-            .btn-group.pull-right
-              - if user_signed_in? && @pic.user == current_user
-                = link_to ' Edit', edit_pic_path(@pic), class: 'btn btn-default fa fa-pencil'
-                = link_to ' Delete', pic_path(@pic), method: :delete,
-                                  data: { confirm: 'Are you sure?' },
-                                  class: 'btn btn-danger fa fa-trash-o'
+        %small Posted by
+        - if current_user == @pic.user
+          = 'you'
+        - else
+          = @pic.user.name || @pic.user.email
+        = time_ago_in_words(@pic.created_at)
+        .likes
+          = link_to " #{@pic.get_downvotes.size}", dislike_pic_path(@pic),
+           method: :put, class: 'fa fa-thumbs-o-down'
+          = link_to " #{@pic.get_upvotes.size}", like_pic_path(@pic),
+           method: :put, class: 'fa fa-thumbs-o-up'
+          .btn-group.pull-right
+            - if user_signed_in? && @pic.user == current_user
+              = link_to ' Edit', edit_pic_path(@pic), class: 'btn btn-default fa fa-pencil'
+              = link_to ' Delete', pic_path(@pic), method: :delete,
+                                    data: { confirm: 'Are you sure?' },
+                                    class: 'btn btn-danger fa fa-trash-o'

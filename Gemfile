@@ -23,7 +23,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'masonry-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'acts_as_votable'
 
 group :development, :test do
 
@@ -40,6 +41,10 @@ group :development do
 
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'pg', '~> 0.18.4'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

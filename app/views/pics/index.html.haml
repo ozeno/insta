@@ -7,9 +7,16 @@
         .padding
           %h3= link_to pic.title, pic
           %p= pic.description.slice 0..220
+        .panel-footer
           %small Posted by
           - if current_user == pic.user
             = 'you'
           - else
             = pic.user.name || pic.user.email
+          = time_ago_in_words(pic.created_at)
+          .likes
+            = link_to " #{pic.get_downvotes.size}", dislike_pic_path(pic),
+             method: :put, class: 'fa fa-thumbs-o-down'
+            = link_to " #{pic.get_upvotes.size}", like_pic_path(pic),
+             method: :put, class: 'fa fa-thumbs-o-up'
       %hr/

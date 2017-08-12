@@ -55,6 +55,19 @@
   justify-content: space-between;
 }
 
+.likes {
+  float: right;
+  a {
+   text-decoration: none;
+  }
+}
+
+#errors {
+  margin-left: 10px;
+  li {
+    margin-left: 30px;
+  }
+}
 #edit_page {
   
 }
