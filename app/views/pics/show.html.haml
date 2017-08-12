@@ -24,6 +24,6 @@
             .btn-group.pull-right
               - if user_signed_in? && @pic.user == current_user
                 = link_to ' Edit', edit_pic_path(@pic), class: 'btn btn-default fa fa-pencil'
-                = link_to ' Delete', pic_path(@pic), method: :delete,
+                = link_to '  Delete', pic_path(@pic), method: :delete,
                                 data: { confirm: 'Are you sure?' },
                                 class: 'btn btn-danger fa fa-trash-o'
