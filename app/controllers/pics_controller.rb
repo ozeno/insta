@@ -1,5 +1,6 @@
 class PicsController < ApplicationController
   before_action :set_pic, only: [:show, :edit, :update, :destroy]
+  before_action :user_allowed?, only: [:edit, :update, :destroy]
 
   def index
     @pics = Pic.all.order('created_at DESC')
@@ -44,5 +45,12 @@ class PicsController < ApplicationController
 
     def set_pic
       @pic = Pic.find(params[:id])
+    end
+
+    def user_allowed?
+      unless @pic.user == current_user
+        flash[:allert] = 'Accsess denied'
+        redirect_to @pic
+      end
     end
 end

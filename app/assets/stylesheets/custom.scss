@@ -26,16 +26,17 @@
   padding: 10px;
 }
 
-.allert-danger {
+.allert {
   display: flex;
   height: 30px;
+  margin: 10px 0px 30px 0px;
   background-color: #ff2841;
   color: #fcf2ff;
   justify-content: center;
   align-items: center;
 }
 
-.allert {
+.notice {
   display: flex;
   height: 30px;
   margin: 10px 0px 30px 0px;
@@ -45,8 +46,13 @@
 }
 
 .box {
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0px 7px 25px -10px rgba(67,70,71,1);
+}
+
+.nav-group {
+  display: flex;
+  justify-content: space-between;
 }
 
 #edit_page {
