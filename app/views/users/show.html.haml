@@ -14,9 +14,6 @@
       .box.panel.panel-default
         = link_to pic do
           = image_tag pic.image, class: 'img-responsive' # cok seksi
-        .padding
-          %h3= link_to pic.title, pic
-          %p= pic.description.slice 0..220
         .panel-footer.box
           %small Posted by
           - if current_user == pic.user
