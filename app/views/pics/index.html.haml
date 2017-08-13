@@ -7,6 +7,9 @@
         .padding
           %h3= link_to pic.title, pic
           %p= pic.description.slice 0..220
+        .comments
+          - if pic.comments.any?
+            = render pic.comments
         .panel-footer.box
           %small Posted by
           - if current_user == pic.user

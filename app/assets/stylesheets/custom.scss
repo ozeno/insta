@@ -63,6 +63,18 @@
   }
 }
 
+.comments {
+  padding: 20px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+}
+
 #user {
   padding: 10px 40px;
   box-shadow: 0px 7px 25px -10px rgba(67,70,71,1);

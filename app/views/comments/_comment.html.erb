@@ -1,0 +1,11 @@
+<div class="comment">
+  <p>
+    <strong> <%= comment.user.name %> </strong>
+    <%= comment.body %>
+  </p>
+
+  <% if comment.user == current_user %>
+    <%= link_to '✖', [comment.pic, comment], method: :delete,
+                    data: { confirm: 'R u sure?' } %>
+  <% end %>
+</div>

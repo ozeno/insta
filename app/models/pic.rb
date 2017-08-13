@@ -6,4 +6,5 @@ class Pic < ApplicationRecord
   validates_attachment_presence :image
   validates :title, presence: true, length: { minimum: 5 }
   validates :description, presence: true, length: { minimum: 10 }
+  has_many :comments, dependent: :destroy
 end

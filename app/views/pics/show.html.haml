@@ -27,3 +27,9 @@
                 = link_to ' Delete', pic_path(@pic), method: :delete,
                                 data: { confirm: 'Are you sure?' },
                                 class: 'btn btn-danger fa fa-trash-o'
+      .panel-body
+        .comments
+          - if @pic.comments.any?
+            = render @pic.comments
+          = render 'comments/form'
+          %br/
