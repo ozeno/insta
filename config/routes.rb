@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'users/:id' => 'users#show', as: :profile
   resources :pics do
     member do
       put 'like' => 'pics#upvote'

@@ -1,6 +1,16 @@
 .col-md-6.col-md-offset-3
+  #user
+    %h2
+      = "#{current_user.name}" 
+      &nbsp; &nbsp;
+      = ' | '
+      &nbsp; &nbsp;
+      = link_to ' ', edit_user_registration_path, class: 'fa fa-cog'
+    %h4
+      = current_user.email
+  %br/
   #pics.transitions-enabled
-    - @pics.each do |pic|
+    - current_user.pics.each do |pic|
       .box.panel.panel-default
         = link_to pic do
           = image_tag pic.image, class: 'img-responsive' # cok seksi
