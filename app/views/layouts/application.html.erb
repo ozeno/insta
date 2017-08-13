@@ -17,7 +17,7 @@
           <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-left nav-group">
               <li><%= link_to ' ', new_pic_path, class: 'fa fa-plus-square fa-lg' %></li>
-              <li><%= link_to ' ', user_path(current_user), class: 'fa fa-user-o fa-lg'%></li>
+              <li><%= link_to ' ', profile_path(current_user), class: 'fa fa-user-o fa-lg'%></li>
               <li><%= link_to ' ', destroy_user_session_path, method: :delete, class: 'fa fa-sign-out fa-lg' %></li>
             </ul>
           <% else %>
