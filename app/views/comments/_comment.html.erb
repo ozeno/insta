@@ -4,7 +4,7 @@
     <%= comment.body %>
   </p>
 
-  <% if comment.user == current_user || (user_signed_in? && current_user.admin?) %>
+  <% if comment.user == current_user || current_user.try(:admin?) %>
     <%= link_to '✖', [comment.pic, comment], method: :delete,
                     data: { confirm: 'R u sure?' } %>
   <% end %>
