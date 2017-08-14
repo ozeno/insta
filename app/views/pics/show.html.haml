@@ -32,5 +32,13 @@
         .comments
           - if @pic.comments.any?
             = render @pic.comments
-          = render 'comments/form'
+          - if user_signed_in?
+            = render 'comments/form'
+          - else
+            %hr/
+            .center-text
+              %h3
+                Please
+                =link_to('sign in', new_user_session_path)
+                to write comments.
           %br/
