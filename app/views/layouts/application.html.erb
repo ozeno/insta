@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Insta</title>
+    <%= favicon_link_tag 'logo.png', rel: 'shortcut icon', type: 'image/png' %>
+    <title>ominsta <%= " | #{current_user.name}" if user_signed_in? %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
