@@ -21,7 +21,7 @@
               <li><%= link_to ' ', destroy_user_session_path, method: :delete, class: 'fa fa-sign-out fa-lg' %></li>
             </ul>
           <% else %>
-            <ul class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-left nav-group">
               <li><%= link_to ' ', new_user_registration_path, class: 'fa fa-user-plus fa-lg' %></li>
               <li><%= link_to ' ', new_user_session_path, class: 'fa fa-sign-in fa-lg' %></li>
             </ul>

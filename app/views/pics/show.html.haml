@@ -16,13 +16,13 @@
               = @pic.user.name || @pic.user.email
             = time_ago_in_words(@pic.created_at)
             ago.
-            - if !viuser_allowed?
-              .likes
-                = link_to " #{@pic.get_downvotes.size}", dislike_pic_path(@pic),
-                 method: :put, class: 'fa fa-thumbs-o-down'
-                = link_to " #{@pic.get_upvotes.size}", like_pic_path(@pic),
-                 method: :put, class: 'fa fa-thumbs-o-up'
             .btn-group.pull-right
+              - if user_signed_in?
+                = link_to " #{@pic.get_downvotes.size}", dislike_pic_path(@pic),
+                 method: :put, class: 'btn btn-default fa fa-thumbs-o-down'
+                = link_to " #{@pic.get_upvotes.size}", like_pic_path(@pic),
+                 method: :put, class: 'btn btn-default fa fa-thumbs-o-up'
+            
               - if viuser_allowed?
                 = link_to ' Edit', edit_pic_path(@pic), class: 'btn btn-default fa fa-pencil'
                 = link_to ' Delete', pic_path(@pic), method: :delete,

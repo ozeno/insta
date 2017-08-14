@@ -11,16 +11,19 @@
           - if pic.comments.any?
             = render pic.comments
         .panel-footer.box
-          %small Posted by
-          - if current_user == pic.user
-            = 'you'
-          - else
-            = pic.user.name || pic.user.email
-          = time_ago_in_words(pic.created_at)
-          ago.
-          .likes
-            = link_to " #{pic.get_downvotes.size}", dislike_pic_path(pic),
-             method: :put, class: 'fa fa-thumbs-o-down'
-            = link_to " #{pic.get_upvotes.size}", like_pic_path(pic),
-             method: :put, class: 'fa fa-thumbs-o-up'
+          .row
+            .col-md-12
+              %small Posted by
+              - if current_user == pic.user
+                = 'you'
+              - else
+                = pic.user.name || pic.user.email
+              = time_ago_in_words(pic.created_at)
+              ago.
+              - if user_signed_in?
+                .btn-group.pull-right
+                  = link_to " #{pic.get_downvotes.size}", dislike_pic_path(pic),
+                   method: :put, class: 'btn btn-default fa fa-thumbs-o-down'
+                  = link_to " #{pic.get_upvotes.size}", like_pic_path(pic),
+                   method: :put, class: 'btn btn-default fa fa-thumbs-o-up'
       %hr/
