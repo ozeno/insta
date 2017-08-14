@@ -15,6 +15,7 @@
             - else
               = @pic.user.name || @pic.user.email
             = time_ago_in_words(@pic.created_at)
+            ago.
             - if @pic.user != current_user
               .likes
                 = link_to " #{@pic.get_downvotes.size}", dislike_pic_path(@pic),

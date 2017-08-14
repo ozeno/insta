@@ -10,7 +10,7 @@
       = current_user.email
   %br/
   #pics.transitions-enabled
-    - current_user.pics.each do |pic|
+    - current_user.pics.order('created_at DESC').each do |pic|
       .box.panel.panel-default
         = link_to pic do
           = image_tag pic.image, class: 'img-responsive' # cok seksi
@@ -21,6 +21,7 @@
           - else
             = pic.user.name || pic.user.email
           = time_ago_in_words(pic.created_at)
+          ago.
           .likes
             = link_to " #{pic.get_downvotes.size}", dislike_pic_path(pic),
              method: :put, class: 'fa fa-thumbs-o-down'
