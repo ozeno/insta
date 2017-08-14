@@ -1,4 +1,6 @@
 class PicsController < ApplicationController
+  include PicsHelper
+
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_pic, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :user_allowed?, only: [:edit, :update, :destroy]
@@ -56,12 +58,5 @@ class PicsController < ApplicationController
 
     def set_pic
       @pic = Pic.find(params[:id])
-    end
-
-    def user_allowed?
-      unless @pic.user == current_user
-        flash[:allert] = 'Accsess denied'
-        redirect_to @pic
-      end
     end
 end

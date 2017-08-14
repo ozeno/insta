@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :pics
   has_many :comments, dependent: :destroy
+
+  def ordinary?
+    role == 'ordinary'
+  end
+
+  def admin?
+    role == 'admin'
+  end
 end
