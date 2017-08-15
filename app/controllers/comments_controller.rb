@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @pic.comments.find(params[:id])
-    @comment.destroy if current_user == @comment.user
+    @comment.destroy if current_user == @comment.user || current_user.try(:admin?)
     
     redirect_to @pic
   end
