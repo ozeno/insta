@@ -25,6 +25,8 @@ gem 'masonry-rails'
 gem 'font-awesome-rails'
 gem 'acts_as_votable'
 
+gem 'foreman'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  host: 127.0.0.1
+  database: insta_production
+  username: deploy
+  password: 66542
+  encoding: unicode
+  pool: 5
