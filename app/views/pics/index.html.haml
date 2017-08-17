@@ -27,3 +27,5 @@
                   = link_to " #{pic.get_upvotes.size}", like_pic_path(pic),
                    method: :put, class: 'btn btn-default fa fa-thumbs-o-up'
       %hr/
+  .col-centered
+    = paginate @pics

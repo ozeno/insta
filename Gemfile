@@ -24,6 +24,7 @@ gem 'paperclip'
 gem 'masonry-rails'
 gem 'font-awesome-rails'
 gem 'acts_as_votable'
+gem 'kaminari'
 
 gem 'foreman'
 
