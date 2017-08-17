@@ -6,7 +6,7 @@ class PicsController < ApplicationController
   before_action :user_allowed?, only: [:edit, :update, :destroy]
 
   def index
-    @pics = Pic.all.order('created_at DESC')
+    @pics = Pic.all.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def show
